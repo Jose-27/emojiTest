@@ -2,7 +2,6 @@
 	
 	"use strict";
 
-
 	app.directive('linearChart',function(d3Service){
         return {
             restrict:'EA',
@@ -14,12 +13,15 @@
             	
             	// -> we wait for the d3 library to be loaded and then draw the graph 
             	d3Service.d3().then(function(d3) {
+                    // -> Global width and height 
+                    var width = 550,
+                        height = 250;
 
 		    		// -> defining chart dimensions
                     var vis = d3.select(".lineChart")
                     	.append("svg")
-                    	.attr("width", 1000)
-                    	.attr("height", 500);
+                    	.attr("width", width)
+                    	.attr("height", height);
 
                     // -> Define the div for the tooltip
                     var div = d3.select("body").append("div")   
@@ -28,8 +30,8 @@
 
 
                     // -> defining inner dimensions
-                    var WIDTH = 550,
-                        HEIGHT = 250,
+                    var WIDTH = width,
+                        HEIGHT = height,
                         MARGINS = {
                             top: 20,
                             right: 20,
@@ -130,7 +132,6 @@
                                 .duration(500)      
                                 .style("opacity", 0);   
                         });
-
 
 		        });
             }

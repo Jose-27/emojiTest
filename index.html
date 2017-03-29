@@ -10,27 +10,35 @@
 	<body ng-app="ngWeatherApp" ng-controller="mainCtrl">
 
 		<main>
-			<section class="weather--container">
-				<div>
+			<section class="grid">
+
+				<div class="flex-item">
 					<h1> {{weather.city}},{{weather.region}}</h1>
 					{{weather.condition}}
-					<div>
-						<img style="float:left;height:64px;width:64px" alt="Rain" src="//ssl.gstatic.com/onebox/weather/64/windy.png">
-						<p>{{weather.temp}} <span style="display:inline" aria-label="°Fahrenheit">°F</span></p>
+					<p>
+						<img alt="Rain" src="//ssl.gstatic.com/onebox/weather/64/windy.png">
+						<p><span>{{weather.temp}}</span> <span aria-label="°Fahrenheit">°F</span></p>
 						high: {{weather.highOfTheDay}}
 						low: {{weather.lowOfTheDay}}
-					</div>
+						<a href="#" ng-click="isReplyFormOpen = !isReplyFormOpen">details -></a>
+					</p>
 				</div>
 
-				<div class="current-condition" style="border:1px solid red;">	
-					humidity{{weather.humidity}}<br>
-					pressure{{weather.pressure}}<br>
-					wind speed{{weather.windSpeed}}<br>
-					sunrise{{weather.sunrise}}<br>
-					sunset{{weather.sunset}}<br>
+				<div class="current-condition flex-item" ng-show="isReplyFormOpen">	
+					humidity: {{weather.humidity}}<br>
+					pressure: {{weather.pressure}}<br>
+					wind speed: {{weather.windSpeed}}<br>
+					sunrise: {{weather.sunrise}}<br>
+					sunset: {{weather.sunset}}<br>
 				</div>
-				<linear-chart data="weather.forecast"></linear-chart>
+
+			</section>
 			
+			<section class="grid">
+				<div class="flex-item">
+					<h2>7 days forcast</h2>
+					<linear-chart data="weather.forecast"></linear-chart>
+				</div>
 			</section>
 		</main>
 	 	<script src="angular.min.js"></script>

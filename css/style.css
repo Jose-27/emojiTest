@@ -6,28 +6,35 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: 'Roboto',arial,sans-serif;
+	overflow: hidden;
 }
 main{
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 100vh;
 	width: 100%;
 }
+.grid{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-.weather--container{
-	border:1px solid #dbdbdb;
-	height:auto;
-	width: 40%;
+.flex-item {
+  flex-grow: 1;
+  flex-basis: 200px;
+  flex-grow: inherit;
+  margin-top: 3%;
 }
-.weather--container h1{
-	color: #878787;
-	font-weight: lighter;
-    font-size: x-large;
+h2{
+	text-align: center;
 }
-p{
+p span:nth-child(1){
 	font-size: 64px;
 	color: #212121;
+}
+img{
+	float:left;
+	height:64px;
+	width:64px
 }
 span{
     margin-top: 6px;
@@ -46,8 +53,9 @@ div.tooltip {
     width: 60px;					
     height: auto;					
     padding: 2px;				
-    font: 12px sans-serif;		
-    background: lightsteelblue;	
+    font: 12px sans-serif;
+    color: white;		
+    background: rgba(0,0,0,0.8);	
     border: 0px;		
     border-radius: 8px;			
     pointer-events: none;			
