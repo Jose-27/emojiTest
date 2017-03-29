@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Weather App</title>
+
+	  	<link rel="stylesheet" type="text/css" href="css/style.css"/> 
+
+	</head>
+	<body ng-app="ngWeatherApp" ng-controller="mainCtrl">
+
+		<main>
+			<section class="weather--container">
+				<div>
+					<h1> {{weather.city}},{{weather.region}}</h1>
+					{{weather.condition}}
+					<div>
+						<img style="float:left;height:64px;width:64px" alt="Rain" src="//ssl.gstatic.com/onebox/weather/64/windy.png">
+						<p>{{weather.temp}} <span style="display:inline" aria-label="°Fahrenheit">°F</span></p>
+						high: {{weather.highOfTheDay}}
+						low: {{weather.lowOfTheDay}}
+					</div>
+				</div>
+
+				<div class="current-condition" style="border:1px solid red;">	
+					humidity{{weather.humidity}}<br>
+					pressure{{weather.pressure}}<br>
+					wind speed{{weather.windSpeed}}<br>
+					sunrise{{weather.sunrise}}<br>
+					sunset{{weather.sunset}}<br>
+				</div>
+				<linear-chart data="weather.forecast"></linear-chart>
+			
+			</section>
+		</main>
+	 	<script src="angular.min.js"></script>
+	 	<script src="scripts/app.js"></script>
+	 	<script src="scripts/controllers/main.ctr.js"></script>
+	 	<script src="scripts/services/getWeather.fac.js"></script>
+	 	<script src="scripts/services/d3.fac.js"></script>
+	 	<script src="scripts/directives/lineChart.dir.js"></script>
+
+	</body>
+</html>
