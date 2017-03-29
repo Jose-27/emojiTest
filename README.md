@@ -1,4 +1,6 @@
 # Run emojiTest
- npm install
- run it with any server you like the one that used was `http-server`
+
+ make sure to do `npm install`
+ #
+ local server used `http-server`
  `npm install http-server`
