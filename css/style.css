@@ -6,7 +6,6 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: 'Roboto',arial,sans-serif;
-	overflow: hidden;
 }
 main{
 	height: 100vh;
@@ -24,12 +23,20 @@ main{
   flex-grow: inherit;
   margin-top: 3%;
 }
+section:nth-child(2){
+    margin-top: 35px;
+}
 h2{
 	text-align: center;
 }
 p span:nth-child(1){
 	font-size: 64px;
 	color: #212121;
+}
+a{
+  font-size: 15px;
+  color: #ff5000;
+  text-decoration: none;  
 }
 img{
 	float:left;
@@ -40,23 +47,52 @@ span{
     margin-top: 6px;
 	font-size: 16px;
 }
+div.tooltip {   
+    position: absolute;         
+    text-align: center;         
+    width: 60px;                    
+    height: auto;                   
+    padding: 2px;               
+    font: 12px sans-serif;
+    color: white;       
+    background: rgba(0,0,0,0.8);    
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+}
 .axis path,
 .axis line {
     fill: none;
     stroke: grey;
     stroke-width: 1;
+    font-size: 24px;
     shape-rendering: crispEdges;
 }
-div.tooltip {	
-    position: absolute;			
-    text-align: center;			
-    width: 60px;					
-    height: auto;					
-    padding: 2px;				
-    font: 12px sans-serif;
-    color: white;		
-    background: rgba(0,0,0,0.8);	
-    border: 0px;		
-    border-radius: 8px;			
-    pointer-events: none;			
+.xAxis,.yAxis{
+    font-size: 15px;
+}
+.dayHigh {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+.dayLow {
+  fill: none;
+  stroke: blue;
+  stroke-width: 2px;
+}
+.svg-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    min-width: 350px;
+    margin: auto;
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    body{
+        margin: 15px;
+    }
 }

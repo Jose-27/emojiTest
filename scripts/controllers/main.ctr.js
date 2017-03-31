@@ -4,15 +4,16 @@
 	
 	app.controller("mainCtrl", function($scope,$http,getWeatherFactory){
 
-		// -> just incase to prevent scope chain
-		var self = $scope;
+		$scope.$watch('isToggleOpen', function(){
+	        $scope.toggleText = $scope.isToggleOpen ? 'less' : 'more';
+	    })
 
 		// -> here we are handaling the promise return by our factory
 		getWeatherFactory.getWeather().then(function(weather){
 
 			var _results = weather.data.query.results.channel;
 
-			self.weather = {
+			$scope.weather = {
 				city: _results.location.city,
 				region: _results.location.region,
 				condition: _results.item.condition.text,

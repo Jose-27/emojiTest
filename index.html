@@ -20,11 +20,11 @@
 						<p><span>{{weather.temp}}</span> <span aria-label="°Fahrenheit">°F</span></p>
 						high: {{weather.highOfTheDay}}
 						low: {{weather.lowOfTheDay}}
-						<a href="#" ng-click="isReplyFormOpen = !isReplyFormOpen">details -></a>
+						<a href="#" ng-click="isToggleOpen = !isToggleOpen">{{toggleText}}</a>
 					</p>
 				</div>
 
-				<div class="current-condition flex-item" ng-show="isReplyFormOpen">	
+				<div class="current-condition flex-item" ng-show="isToggleOpen">	
 					humidity: {{weather.humidity}}<br>
 					pressure: {{weather.pressure}}<br>
 					wind speed: {{weather.windSpeed}}<br>
@@ -34,11 +34,11 @@
 
 			</section>
 			
-			<section class="grid">
-				<div class="flex-item">
-					<h2>7 days forcast</h2>
-					<linear-chart data="weather.forecast"></linear-chart>
-				</div>
+			<section>
+
+				<h2>7 days forcast</h2>
+				<linear-chart data="weather.forecast"></linear-chart>
+			
 			</section>
 		</main>
 	 	<script src="angular.min.js"></script>
